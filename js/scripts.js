@@ -25,7 +25,13 @@ window.addEventListener("load", function(){
   
   p1.append("The HTML of this webpage was created with JavaScript.");
   document.querySelector("h1").after(p1);
-  
+
+  const image = document.createElement ("img");
+  //document.querySelector("img").setAttribute("src"); NOT NEEDED
+  image.src = "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/202984001/900";
+  image.alt = "This is an image of a Multicolored Tanager bird from birdsoftheworld.org";
+  image.style.width = "50%";
+  p1.append(image);
 
   // ul
   const ulList = document.createElement("ul");
