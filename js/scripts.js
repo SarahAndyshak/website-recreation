@@ -1,35 +1,48 @@
-function makeWebpage(){
-  // e.preventDefault(); removed 
+  //const firstHeading = document.createElement ("h1");
+  // firstHeading.append("Webpage Recreation Practice");
+  // firstHeading; 
+  // console.log("1st h1: ", firstHeading);
+  // firstHeading.innerText;
+  // console.log("1st h1.innerText: ", firstHeading.innerText);
+
+  // document.getElementsByTagName("body").append(firstHeading);
+  // let any =  document.getElementsByTagName("body").append(firstHeading);
+  // console.log("doc tag: ", any);
+
+
+window.addEventListener("load", function(){
   const firstH1 = document.querySelector("h1");
   firstH1.remove();
   console.log("This is definitely running.");
-
   const firstHeading = document.createElement ("h1");
+  const secondHeading = document.createElement ("h1");
   firstHeading.append("Webpage Recreation Practice");
-  firstHeading; 
-  console.log("1st h1: ", firstHeading);
-  firstHeading.innerText;
-  console.log("1st h1.innerText: ", firstHeading.innerText);
+  secondHeading.append("Facts about the Multicolored Tanager");
 
-  // add 2nd h1
-  //  h1 > ul > li1, li2
-  // const secondH1 = document.createElement("h1");
-  // secondH1.append("Facts about the Multicolored Tanager");
-  // ul
-  // const ulList = document.createElement("ul");
-  // ulList.append(secondH1);
-  // // li's
-  // const liOne = document.createElement("li");
-  // const liTwo = document.createElement("li");
-
-//   liOne.append("It is endemic to the mountains of Colombia.");
-//   liTwo.append("It usually searches for insects on the underside of leaves of outer limbs while clinging to leaves with its feet.");
-
-//  document.querySelector(ulList).append(liOne, liTwo);
+  const body = document.querySelector("body");
+  document.querySelector("body").append(firstHeading, secondHeading);
+  const p1 = document.createElement("p");
   
-}
+  p1.append("The HTML of this webpage was created with JavaScript.");
+  document.querySelector("h1").after(p1);
+  
 
-window.addEventListener("load", function(){
-  makeWebpage();
+  // ul
+  const ulList = document.createElement("ul");
+  // ul.after(secondHeading); secondHeading = element referenced, .after places object in ()
+  secondHeading.after(ulList);
+
+  // console.log("ul: ", ulList);
+  // li's
+  const liOne = document.createElement("li");
+  const liTwo = document.createElement("li");
+ 
+  liOne.append("It is endemic to the mountains of Colombia.");
+  liTwo.append("It usually searches for insects on the underside of leaves of outer limbs while clinging to leaves with its feet.");
+  
+  // document.querySelector("ul"); 
+  ulList.append(liOne);
+  ulList.append(liTwo);
+
+  console.log("doc ul>li: ", ulList, liOne, liTwo);
 })
-//look up event.preventDefault issue
