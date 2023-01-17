@@ -5,11 +5,6 @@
   // firstHeading.innerText;
   // console.log("1st h1.innerText: ", firstHeading.innerText);
 
-  // document.getElementsByTagName("body").append(firstHeading);
-  // let any =  document.getElementsByTagName("body").append(firstHeading);
-  // console.log("doc tag: ", any);
-
-
 window.addEventListener("load", function(){
   const firstH1 = document.querySelector("h1");
   firstH1.remove();
@@ -42,7 +37,7 @@ window.addEventListener("load", function(){
   // li's
   const liOne = document.createElement("li");
   const liTwo = document.createElement("li");
- 
+
   liOne.append("It is endemic to the mountains of Colombia.");
   liTwo.append("It usually searches for insects on the underside of leaves of outer limbs while clinging to leaves with its feet.");
   
@@ -50,5 +45,17 @@ window.addEventListener("load", function(){
   ulList.append(liOne);
   ulList.append(liTwo);
 
-  console.log("doc ul>li: ", ulList, liOne, liTwo);
+  // console.log("doc ul>li: ", ulList, liOne, liTwo);
+
+  const h2Header = document.createElement("h2");
+  h2Header.append("Source");
+  ulList.after(h2Header);
+
+  const anchor = document.createElement("a");
+  anchor.append("Wikipedia");
+  // anchor.href = "https://en.wikipedia.org/wiki/Multicoloured_tanager";
+  anchor.setAttribute("href", "https://en.wikipedia.org/wiki/Multicoloured_tanager");
+  //both methods above work!
+  h2Header.after(anchor);
+
 })
